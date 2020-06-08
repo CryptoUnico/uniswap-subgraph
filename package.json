@@ -1,16 +1,16 @@
 {
-  "name": "uniswap-subgraph",
+  "name": "uniswap",
   "version": "1.0.0",
-  "repository": "https://github.com/graphprotocol/uniswap-subgraph",
+  "repository": "https://github.com/Zapper-fi/uniswap-subgraph",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
-    "create-local": "graph create davekaj/uniswap --node http://127.0.0.1:8020",
+    "create": "graph create happykennedy/uniswap --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create happykennedy/uniswap --node http://127.0.0.1:8020",
     "build": "graph build",
-    "deploy-local": "graph deploy davekaj/uniswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
-    "deploy": "graph deploy graphprotocol/uniswap  --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
-    "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Uniswap --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
-    "watch-local": "graph deploy graphprotocol/Uniswap2 --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+    "deploy-local": "graph deploy happykennedy/uniswap --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy": "graph deploy happykennedy/uniswap  --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Uniswap --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.16.0",

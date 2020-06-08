@@ -289,6 +289,7 @@ export function handleTokenPurchase(event: TokenPurchase): void {
       exchangeDayData.ethVolume = zeroBD()
       exchangeDayData.totalEvents = zeroBigInt()
       exchangeDayData.tokenPriceUSD = zeroBD()
+      exchangeDayData.totalUniToken = zeroBD()
     }
     exchangeDayData.ethBalance = exchange.ethBalance
     exchangeDayData.tokenBalance = exchange.tokenBalance
@@ -297,6 +298,7 @@ export function handleTokenPurchase(event: TokenPurchase): void {
     }
     exchangeDayData.ethVolume = exchangeDayData.ethVolume.plus(ethAmount)
     exchangeDayData.tokenPriceUSD = exchange.priceUSD
+    exchangeDayData.totalUniToken = exchange.totalUniToken
     exchangeDayData.totalEvents = exchangeDayData.totalEvents.plus(oneBigInt())
     exchangeDayData.save()
   }
@@ -516,6 +518,7 @@ export function handleEthPurchase(event: EthPurchase): void {
       exchangeDayData.ethVolume = zeroBD()
       exchangeDayData.totalEvents = zeroBigInt()
       exchangeDayData.tokenPriceUSD = zeroBD()
+      exchangeDayData.totalUniToken = zeroBD()
     }
     exchangeDayData.ethBalance = exchange.ethBalance
     exchangeDayData.tokenBalance = exchange.tokenBalance
@@ -524,6 +527,7 @@ export function handleEthPurchase(event: EthPurchase): void {
     }
     exchangeDayData.ethVolume = exchangeDayData.ethVolume.plus(ethAmount)
     exchangeDayData.tokenPriceUSD = exchange.priceUSD
+    exchangeDayData.totalUniToken = exchange.totalUniToken
     exchangeDayData.totalEvents = exchangeDayData.totalEvents.plus(oneBigInt())
     exchangeDayData.save()
   }
@@ -721,6 +725,7 @@ export function handleAddLiquidity(event: AddLiquidity): void {
       exchangeDayData.marginalEthRate = zeroBD()
       exchangeDayData.ethVolume = zeroBD()
       exchangeDayData.tokenPriceUSD = zeroBD()
+      exchangeDayData.totalUniToken = zeroBD()
       exchangeDayData.totalEvents = zeroBigInt()
     }
     exchangeDayData.ethBalance = exchange.ethBalance
@@ -729,6 +734,7 @@ export function handleAddLiquidity(event: AddLiquidity): void {
       exchangeDayData.marginalEthRate = exchange.tokenBalance.div(exchange.ethBalance).truncate(8)
     }
     exchangeDayData.tokenPriceUSD = exchange.priceUSD
+    exchangeDayData.totalUniToken = exchange.totalUniToken
     exchangeDayData.totalEvents = exchangeDayData.totalEvents.plus(oneBigInt())
     exchangeDayData.save()
   }
@@ -914,6 +920,7 @@ export function handleRemoveLiquidity(event: RemoveLiquidity): void {
       exchangeDayData.tokenBalance = zeroBD()
       exchangeDayData.marginalEthRate = zeroBD()
       exchangeDayData.ethVolume = zeroBD()
+      exchangeDayData.totalUniToken = zeroBD()
       exchangeDayData.totalEvents = zeroBigInt()
       exchangeDayData.tokenPriceUSD = zeroBD()
     }
@@ -923,6 +930,7 @@ export function handleRemoveLiquidity(event: RemoveLiquidity): void {
       exchangeDayData.marginalEthRate = exchange.tokenBalance.div(exchange.ethBalance).truncate(8)
     }
     exchangeDayData.tokenPriceUSD = exchange.priceUSD
+    exchangeDayData.totalUniToken = exchange.totalUniToken
     exchangeDayData.totalEvents = exchangeDayData.totalEvents.plus(oneBigInt())
     exchangeDayData.save()
   }

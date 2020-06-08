@@ -199,6 +199,7 @@ type ExchangeDayData @entity {
     marginalEthRate: BigDecimal!            # tokenBalance / ethBalance
     ethVolume: BigDecimal!                  # Cumulative volume throughout the day
     tokenPriceUSD: BigDecimal!              # USD token price at last event within the day
+    totalUniToken: BigDecimal!              # Count of the unilying unitokens that represent liquidity provided ownership
     totalEvents: BigInt!
 }
 

@@ -904,6 +904,7 @@ export function handleRemoveLiquidity(event: RemoveLiquidity): void {
     eh.combinedBalanceInUSD = exchange.combinedBalanceInUSD
     eh.tokenPriceUSD = exchange.priceUSD
     eh.price = exchange.price
+    eh.totalUniToken = exchange.totalUniToken
     eh.tradeVolumeToken = exchange.tradeVolumeToken
     eh.tradeVolumeEth = exchange.tradeVolumeEth
     eh.feeInEth = zeroBD()
